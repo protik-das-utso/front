@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #6dd5ed, #5578f7ee);
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    padding: 10px;
+    background: linear-gradient(to right, #6dd5ed, #5578f7ee);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    animation: slideIn 1s forwards;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 300px;
+    background: linear-gradient(to bottom right, #ffffff, #e0e0e0);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 10px;
+    opacity: 0;
+    animation: slideIn 1s forwards; 
+}
+
+#box1 {
+    background: linear-gradient(to bottom right, #ffeb3b, #fbc02d);
+    animation-delay: 0.1s;
+}
+
+#box2 {
+    background: linear-gradient(to bottom right, #ffccbc, #ffab91);
+    animation-delay: 0.2s;
+}
+
+#box3 {
+    background: linear-gradient(to bottom right, #c8e6c9, #a5d6a7);
+    animation-delay: 0.3s;
+}
+
+#box4 {
+    background: linear-gradient(to bottom right, #f5f5f5, #e0e0e0);
+    animation-delay: 0.4s;
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.box p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    transition: none; 
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%; 
+        padding: 10px; 
+    }
+
+    .box {
+        width: 90%; 
+        height: 150px;
+    }
+
+    .box p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        height: 130px; 
+    }
+
+    .box p {
+        font-size: 16px;
+    }
+}
